@@ -1,0 +1,35 @@
+{{template "base" .}}
+{{define "content"}}
+<body>
+    <div id= "bookpar">
+    <button id="prev-btn">
+        <i class="fas fa-arrow-circle-left"></i>
+    </button>
+
+    <!-- The Book -->
+    <div id="book" class="book">
+        {{range $i, $image := .Images}}
+            <!-- Paper -->
+            <div id="p1" class="paper">
+                <div class="front">
+                    <div id="f1" class="front-content">
+                        <h1 class="book-title">{{$image.FrontTitle}}</h1>
+                        <img class="cover-img" src="{{$image.FrontImagePath}}" alt="dog">
+                    </div>
+                </div>
+                <div class="back">
+                    <div id="b1" class="back-content">
+                        <h1 class="book-title">{{$image.BackTitle}}</h1>
+                        <img class="cover-img" src="{{$image.BackImagePath}}" alt="dog">
+                    </div>
+                </div>
+            </div>
+        {{end}}
+    </div>
+
+    <button id="next-btn">
+        <i class="fas fa-arrow-circle-right"></i>
+    </button>
+    </div>
+</body>
+{{end}}

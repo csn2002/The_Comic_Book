@@ -1,0 +1,15 @@
+{{template "base" .}}
+{{define "content"}}
+    <h2>Dynamic String Input Form</h2>
+    <form action='/showcomic' method='POST' novalidate>
+        <label for="numInputs">Number of Inputs:</label>
+        <input type="number" id="numInputs" name="numInputs" min="1" required oninput="createInputFields()">
+
+        <div id="inputFieldsContainer"></div>
+
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
+{{end}}
